@@ -26,4 +26,4 @@ def drinks(request, drink_name):
 
     choice_of_drink = drink.get(drink_name, 'Drink not available')
 
-    return HttpResponse(f"<h2>{drink_name}</h2>{choice_of_drink}")
+    return HttpResponse(f"<h2>{drink_name}</h2> + choice_of_drink")
