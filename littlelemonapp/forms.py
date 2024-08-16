@@ -1,5 +1,5 @@
 from django import forms
-from .models import MyForm
+from .models import Reserve
 
 # class UserForm(ModelForm):
 #     class Meta:
@@ -13,7 +13,10 @@ from .models import MyForm
     #age = forms.IntegerField(label="Enter your age")
     #comment = forms.CharField(widget=forms.Textarea(attrs={'rows':5}))
 
-class myForm(forms.ModelForm):
-    class LittleLemon:
-        model = MyForm
-        fiels = '__all__'
+class ReserveForm(forms.ModelForm):
+    class Meta:
+        model = Reserve
+        fields = "__all__"
+        widgets = {
+            'date': forms.widgets.DateInput(attrs={'type': 'date'})
+        }

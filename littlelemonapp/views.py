@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .forms import MyForm
+from .forms import ReserveForm, Reserve
 # Create your views here.
 
 # def index(request):
@@ -32,10 +32,10 @@ def drinks(request, drink_name):
 
 
 def form_view(request):
-    form = MyForm()
+    form = ReserveForm()
     if request.method == 'POST':
-        form = MyForm(request.POST)
+        form = ReserveForm(request.POST)
         if form.is_valid():
             form.save()
     context = {"form" : form}
-    return render(request, 'home.html', {'form': form})
+    return render(request, 'home.html', context)

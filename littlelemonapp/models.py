@@ -14,13 +14,20 @@ class Menu(models.Model):
 #     def __str__(self):
 #         return self.name
 
-class Person(models.Model):
+# class Person(models.Model):
+#     name=models.CharField(max_length=100)
+#     email=models.EmailField(unique=True)
+#     date=models.DateField()
+
+
+class Reserve(models.Model):
     name=models.CharField(max_length=100)
     email=models.EmailField(unique=True)
     date=models.DateField()
 
-
-class MyForm(models.Model):
-    name=models.CharField(max_length=100)
-    email=models.EmailField(unique=True)
-    date=models.DateField()
+class ManualReservation(models.Model):
+    name = models.CharField(max_length=100, blank=True)
+    contact = models.CharField('Phone Number', max_length=300)
+    time = models.TimeField()
+    count = models.IntegerField()
+    notes = models.CharField(max_length=300, blank=True)
