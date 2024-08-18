@@ -1,5 +1,6 @@
 from django import forms
 from .models import Reserve
+from .models import Booking
 
 # class UserForm(ModelForm):
 #     class Meta:
@@ -20,3 +21,4 @@ class ReserveForm(forms.ModelForm):
         widgets = {
             'date': forms.widgets.DateInput(attrs={'type': 'date'})
         }
+

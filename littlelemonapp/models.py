@@ -25,7 +25,7 @@ class Reserve(models.Model):
     email=models.EmailField(unique=True)
     date=models.DateField()
 
-class ManualReservation(models.Model):
+class Booking(models.Model):
     name = models.CharField(max_length=100, blank=True)
     contact = models.CharField('Phone Number', max_length=300)
     time = models.TimeField()
