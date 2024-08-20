@@ -31,3 +31,11 @@ class Booking(models.Model):
     time = models.TimeField()
     count = models.IntegerField()
     notes = models.CharField(max_length=300, blank=True)
+
+class Book(models.Model):
+    title = models.CharField(max_length=255)
+    author = models.CharField(max_length=255)
+    price = models.DecimalField(max_digits=5, decimal_places=2)
+
+    class Meta:
+        indexes = models.Index(fields=['price']),
